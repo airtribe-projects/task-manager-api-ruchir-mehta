@@ -25,6 +25,7 @@ tap.test("POST /tasks with invalid data", async (t) => {
 
 tap.test("GET /tasks", async (t) => {
   const response = await server.get("/tasks");
+  console.log('Status: ', response.status);
   t.equal(response.status, 200);
   t.hasOwnProp(response.body[0], "id");
   t.hasOwnProp(response.body[0], "title");
